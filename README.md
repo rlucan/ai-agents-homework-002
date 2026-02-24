@@ -124,5 +124,5 @@ python app.py
 
 Na závěr ukázka konveraze: 
 
-![image](konverzace.png)
+![image](konverzace2.png)
 
