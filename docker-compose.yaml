@@ -1,0 +1,26 @@
+services:
+  langflow:
+    image: langflowai/langflow:latest
+    ports:
+      - "7860:7860"
+    networks:
+      - langflow-net
+    depends_on:
+      - mcp-mysql
+    environment:
+      - SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN}
+      - OPEN_AI_API_KEY=${OPEN_AI_API_KEY}
+      - LANGFLOW_VARIABLES_TO_GET_FROM_ENVIRONMENT=SLACK_BOT_TOKEN,OPEN_AI_API_KEY
+
+  mcp-mysql:
+    image: node:22-slim
+    working_dir: /app
+    command: sh -c "npm install -g mysql-mcp-server"
+    networks:
+      - langflow-net
+    ports:
+      - "3001:3001"
+
+networks:
+  langflow-net:
+    driver: bridge
