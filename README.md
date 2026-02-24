@@ -15,7 +15,7 @@ Flask aplikace sloužící jako webhook endpoint pro Slack události:
 - **Konfigurace přes `.env`**: Aplikace načítá `../.env` pomocí `python-dotenv` – `LANGFLOW_WEBHOOK` URL tak stačí nastavit v `.env` souboru v kořeni projektu
 
 Poznámka: Asi by vše šlo pořešit v kódu Webhook nodu, ale jako příjemný bonus vyšlo i to, že takto je to verifikační URL, které je
-třeba zadat na api.slack.com, stále stejné (https://<ngrok-url>.ngrok-free.dev/slack) a nteřeba jej měnit s
+třeba zadat na api.slack.com, stále stejné (https://some-ngrok-url.ngrok-free.dev/slack) a nteřeba jej měnit s
 každým restartem langflow. Stačí jej lokálne změnit v .env
 
 ### 2. **Langflow Workflow** (`Slack MySQL Assistant.json`)
